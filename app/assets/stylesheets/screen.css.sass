@@ -1,0 +1,70 @@
+/*
+  Welcome to Compass.
+  In this file you should write your main styles. (or centralize your imports)
+  Import this file using the following HTML or equivalent:
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+
+$columnal-grid-width: 960px !default
+
+// http://colorschemedesigner.com/#3C62P--fyg0g0
+$blue: #002551
+$pink: #5A0046
+$green: #5A7600
+$orange: #7C4C00
+
+@import compass/reset
+@import columnal/grid
+
+body
+  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif
+  font-size: small
+  height: 100%
+  background: url("bg.png") repeat-x black
+  color: white
+  +grid-container
+  section
+    +grid-row
+
+header
+  font-family: 'Mystery Quest', cursive
+  font-size: xx-large
+  margin-top: .7em
+  margin-bottom: 3em
+  +grid(12)
+
+.welcome
+  +grid(6)
+
+h1, h2, p, ul
+  margin-bottom: 1em
+
+hr
+  border: none
+  border-bottom: white dashed 1px
+  margin-bottom: 2em
+
+h1, h2
+  font-family: 'Mystery Quest', cursive
+  +text-shadow(white 0 0 5px)
+
+h2
+  font-size: x-large
+
+h1
+  font-size: xx-large
+
+form
+  +grid(6)
+  +last
+  label, input[type="submit"]
+    display: block
+
+ul
+  padding-left: 2em
+  list-style: disc
+
+em
+  font-style: italic
+
+strong
+  font-weight: bold

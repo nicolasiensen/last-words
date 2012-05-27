@@ -1,0 +1,33 @@
+.welcome
+  %h2 Welcome to the deads place...
+  %p 
+    But wait! You don't have to be quiet just because you are here, or will be someday. 
+    %strong Muhahahaha!
+  %p
+    Death is a natural thing, and as my mom say: 
+    %em "When someone dies, the living who suffer"
+  %p That's why we have created this place.
+  %ul
+    %li 
+      Give you a chance to say
+      %em good bye!
+    %li Keep congratulating your friend's birthday
+    %li Tell your passwords to somebody
+    %li Make sure people know you care about them
+  %p or whatever you want to say after your death...
+  %hr
+  %h2 Hey! How do you know that I'm dead?!
+  %p Quiet simple.
+  %p You connect your Facebook account with me (the Death), and I will be monitoring your activity.
+  %p If you go a month without access to your Facebook account I will send you a message... Scared?
+  %p Don't be, it's an email message. Inside this message will be a link saying "I'm alive!". If you click on this I'll consider you alive for a while...
+  %p Well... If you take more than a month to click on it I'll consider you're dead, and I'll start to send your messages.
+
+= form_for @message do |form|
+  = form.label :text do
+    %h1 So... what's your message?
+  = form.text_area :text
+  = form.label :days_to_send
+  = form.number_field :days_to_send
+  days after your death
+  = form.submit "Schedule my first message!"

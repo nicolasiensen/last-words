@@ -17,7 +17,7 @@ development:
   encoding: unicode
   database: last-words_development
   pool: 5
-  username: last-words
+  username: nicolasiensen
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -43,15 +43,7 @@ test: &test
   encoding: unicode
   database: last-words_test
   pool: 5
-  username: last-words
-  password:
-
-production:
-  adapter: postgresql
-  encoding: unicode
-  database: last-words_production
-  pool: 5
-  username: last-words
+  username: nicolasiensen
   password:
 
 cucumber:
