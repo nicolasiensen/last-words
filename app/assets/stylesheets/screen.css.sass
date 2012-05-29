@@ -15,49 +15,20 @@ $orange: #7C4C00
 @import compass/reset
 @import columnal/grid
 
-body
-  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif
-  font-size: small
-  height: 100%
-  background: url("bg.png") repeat-x black
-  color: white
-  +grid-container
-  section
-    +grid-row
-
-header
-  font-family: 'Mystery Quest', cursive
-  font-size: xx-large
-  margin-top: .7em
-  margin-bottom: 3em
-  +grid(12)
-
-.welcome
-  +grid(6)
-
 h1, h2, p, ul
   margin-bottom: 1em
 
-hr
-  border: none
-  border-bottom: white dashed 1px
-  margin-bottom: 2em
-
-h1, h2
+h1, h2, header
   font-family: 'Mystery Quest', cursive
-  +text-shadow(white 0 0 5px)
-
-h2
-  font-size: x-large
 
 h1
   font-size: xx-large
 
-form
-  +grid(6)
-  +last
-  label, input[type="submit"]
-    display: block
+h2
+  font-size: x-large
+
+hr
+  margin-bottom: 2em
 
 ul
   padding-left: 2em
@@ -68,3 +39,28 @@ em
 
 strong
   font-weight: bold
+
+a
+  color: lighten($blue, 50%)
+
+body
+  font-family: Lucida Sans Unicode, Lucida Grande, sans-serif
+  font-size: small
+  background: black
+  color: white
+  +grid-container
+  section
+    +grid-row
+    header
+      +grid(12)
+      +last
+      font-size: xx-large
+      margin-top: 1em
+      margin-bottom: 1em
+    .welcome
+      +grid(6)
+    form.new_message
+      +grid(6)
+      +last
+      label, input[type="submit"]
+        display: block
