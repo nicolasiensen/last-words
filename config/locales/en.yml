@@ -207,3 +207,6 @@ en:
       message:
         text: "Message"
         days_to_send: "Schedule for"
+  unauthorized:
+    create:
+      message: "I need your Facebook account to deliver your messages"

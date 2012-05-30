@@ -1,7 +1,15 @@
 LastWords::Application.routes.draw do
   root :to => 'messages#new'
 
-  resources :messages, :only => [:new, :create, :show]
+  resources :messages, :only => [:new, :create, :show] do
+    collection do
+      get :create_from_session, :to => "messages#create_from_session"
+    end
+  end
+
+  resources :sessions, :only => [:new, :create]
+
+  match '/auth/:provider/callback', to: 'sessions#create'
   
   # The priority is based upon order of creation:
   # first created -> highest priority.

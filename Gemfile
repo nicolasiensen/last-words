@@ -49,3 +49,5 @@ gem "haml-rails"
 gem "compass-columnal-plugin"
 gem "heroku"
 gem 'sass-rails',   '~> 3.2.3'
+gem "cancan"
+gem 'omniauth-facebook'

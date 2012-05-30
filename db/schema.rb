@@ -11,13 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120527024243) do
+ActiveRecord::Schema.define(:version => 20120530161202) do
 
   create_table "messages", :force => true do |t|
     t.text     "text"
     t.integer  "days_to_send"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "mortal_id"
+  end
+
+  create_table "mortals", :force => true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "image"
+    t.string   "uid"
+    t.text     "token"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end
