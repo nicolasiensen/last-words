@@ -203,6 +203,13 @@ en:
   activerecord:
     errors:
       <<: *errors
+      models:
+        message:
+          attributes:
+            text:
+              blank: "Don't you wanna say something after your death? Come on... don't be shy"
+            days_to_send:
+              blank: "When should I deliver it?"
     attributes:
       message:
         text: "Message"

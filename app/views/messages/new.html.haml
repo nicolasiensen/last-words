@@ -1,36 +1,37 @@
-.welcome
-  %h2 Welcome to the deads place...
-  %p 
-    But wait! You don't have to be quiet just because you are here, or will be someday. 
-    %strong Muhahahaha!
-  %p
-    Death is a natural thing, and as my mom say: 
-    %em "When someone dies, the living who suffer"
-  %p That's why we have created this place.
-  %ul
-    %li 
-      Give you a chance to say
-      %em good bye!
-    %li Keep congratulating your friend's birthday
-    %li Tell your passwords to somebody
-    %li Make sure people know you care about them
-  %p or whatever you want to say after your death...
-  %hr
-  %h2 Hey! How do you know that I'm dead?!
-  %p Quiet simple.
-  %p 
-    You 
-    = link_to "connect your Facebook account", "#"
-    with me (the Death), and I will be monitoring your activity.
-  %p If you go a month without access to your Facebook account I will send you a message... Scared?
-  %p Don't be, it's an email message. Inside this message will be a link saying "I'm alive!". If you click on this I'll consider you alive for a while...
-  %p Well... If you take more than a month to click on it I'll consider you're dead, and I'll start to send your messages.
-
-= form_for @message do |form|
-  = form.label :text do
-    %h1 So... what's your message?
-  = form.text_area :text
-  = form.label :days_to_send
-  = form.number_field :days_to_send
-  days after your death
-  = form.submit "Schedule my first message!"
+.row
+  .welcome
+    %h2 Welcome to the deads place...
+    %p Hey mortals! It's Death talking. I've been working on something for you.
+    %p I received a lot of complains about deads can't talk. So I decided to give voice for you even in death.
+    %p Cool huh?!
+    %p Now you can:
+    %ul
+      %li 
+        Say
+        %em good bye!
+        for the last time;
+      %li Keep congratulating your friend's birthday;
+      %li Tell your passwords to somebody;
+      %li Make sure people know you care about them.
+    %p or whatever you want to say after your death...
+    %h2 How does it works?
+    %p Quiet simple.
+    %p
+      You 
+      = link_to "connect your Facebook account", "/auth/facebook"
+      with me (the Death), and write some messages.
+    %p I'll be monitoring your activity on Facebook. If you go a month without access your Facebook account I will send you a message... Scared?
+    %p Don't be, it's an email message. Inside this message will be a link saying "I'm alive!". If you click on this I'll consider you alive for a while...
+    %p Well... If you take more than a month to click on it I'll consider you're dead, and I'll start to post your messages in your Facebook timeline.
+    %p Simple isn't it?
+  
+  = form_for @message do |form|
+    = form.label :text do
+      %h1 So... what's your message?
+    = form.text_area :text, :placeholder => "For example: Hey everybody! This is a message from the future :D I hope you are all good! Cause I am :)"
+    .inline-errors= @message.errors[:text].join(", ")
+    = form.label :days_to_send
+    = form.number_field :days_to_send
+    days after my death
+    .inline-errors= @message.errors[:days_to_send].join(", ")
+    = form.submit "Schedule my first message!"

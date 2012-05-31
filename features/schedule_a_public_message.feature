@@ -15,3 +15,11 @@ Feature: schedule a public message
     And I should see "Hey everybody! This is a message from the future :D I hope you are all good! Because I am :)"
     And I should see "will be spread 1 day after you die"
     And I should see "In memory of Joe Bloggs"
+
+  @omniauth_test
+  Scenario: when I leave fields blank
+    Given I am logged in
+    And I am in "the homepage"
+    When I press "Schedule my first message!"
+    Then I should see "Don't you wanna say something after your death? Come on... don't be shy"
+    Then I should see "When should I deliver it?"

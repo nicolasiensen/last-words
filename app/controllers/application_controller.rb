@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  helper_method :current_mortal
 
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to new_session_path, :alert => exception.message

@@ -3,7 +3,7 @@ class MessagesController < InheritedResources::Base
   load_and_authorize_resource
 
   def create
-    params[:message] = session.delete(:message).merge(:mortal_id => current_mortal.id)
+    @message = Message.new session.delete(:message).merge(:mortal_id => current_mortal.id)
     create! do |success, failure|
       success.html { redirect_to @message and return }
     end
